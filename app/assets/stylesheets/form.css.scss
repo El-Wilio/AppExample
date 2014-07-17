@@ -1,0 +1,17 @@
+input[type=email], input[type=password], input[type=text]{
+   border-type: solid;
+   border-color: black;
+   border-width: 1px;
+   padding: 0.4em; 
+}
+
+.info {
+    padding-right: 5px;
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.new_user {
+}
+

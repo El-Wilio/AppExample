@@ -8,7 +8,32 @@
 </head>
 <body>
 
+<div id="navigation">
+    <span>
+        <%= link_to("Home", "/"); %>
+        <%= link_to_if(current_user.nil?, "Login", "/login") do 
+                link_to("My Account", "/logout", :method => :delete)
+            end
+         %>
+        <%= link_to("Car Search", "#") %>
+        <%= link_to("About me", "home/about") %>
+        <%= link_to_if(current_user.nil?, "Register", "/register") do
+                link_to("Log out", "/logout", :method => :delete) 
+            end 
+        %>
+    </span>
+</div>    
+
+<div id="content">
+     
+<% if !flash[:notice].nil? %>
+<p class="notice"><%= notice %></p>
+<% end %>
+<% if !flash[:alert].nil? %>
+<p class="alert"><%= alert %></p>
+<% end %>
 <%= yield %>
 
+</div>
 </body>
 </html>

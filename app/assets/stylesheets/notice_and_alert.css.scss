@@ -1,0 +1,26 @@
+p.notice  {
+    color: darkgreen;
+    width: calc(100% - 2px);
+    background-image: url('');
+    background-repeat: no-repeat;
+    font-size: 12px;
+    border-style: dashed;
+    border-width: 1px;
+    border-color: forestgreen;
+    padding: 2px; 
+    background-color: palegreen;
+}
+
+
+p.alert  {
+    color: darkred;
+    width: calc(100% - 2px);
+    background-image: url('');
+    background-repeat: no-repeat;
+    font-size: 12px;
+    border-style: dashed;
+    border-width: 1px;
+    border-color: firebrick;
+    padding: 2px; 
+    background-color: lightcoral;
+}

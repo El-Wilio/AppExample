@@ -1,0 +1,49 @@
+<% if !current_user.nil? %>
+<h1>Personal info</h1>
+<div class="info">
+ <p>You are seeing this page because you are needed to fill in your personal info
+ in order to continue.</p>
+
+ <p> This page is also complimented with some javascript to help you, the client, to fill those forms in
+ a correct manner.</p>
+ </div>
+
+
+<%= form_for @person, url: {action: "create"} do |f| %>
+    <div>
+        <%= f.label :First_Name %><br />
+        <%= f.text_field :forename %>
+    </div>
+    <div>
+        <%= f.label :Last_Name %><br />
+        <%= f.text_field :surname %>
+    </div>
+    <div>
+        <%= f.label :Street_address %><br />
+        <%= f.text_field :street_address %>
+    </div>
+    <div>
+        <%= f.label :City %><br />
+        <%= f.text_field :city %>
+    </div>
+    <div>
+        <%= f.label :Province %><br />
+        <%= f.text_field :province %>
+    </div>
+    <div>
+        <%= f.label :Postal_code %><br />
+        <%= f.text_field :postal_code %>
+    </div>
+    <div>
+        <%= f.label :Telephone_number %><br />
+        (<%= f.text_field :regional, size: "3" %>)
+        <%= f.text_field :first_half, size: "3" %>-
+        <%= f.text_field :second_half, size: "4" %>
+    </div>
+    <div>
+        <%= f.submit "Send Info" %></div>
+<% end %>
+<% else %>
+    <% flash[:alert] = "OOPS! You're not supposed to be here buddy!" %>
+<% end %>
+

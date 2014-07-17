@@ -1,0 +1,27 @@
+<h2>Sign up</h2>
+
+<div class="info">
+    <p>Welcome to the sign up page. If you need help, read the following:
+    <ul>
+        <li>Email: please enter a valid format such as this: <name>@<host>.<(com|ca|etc)></li>
+        <li>Password: please enter your password, minimum characters needed: 8</li>
+        <li>Password confirmation: you must re-enter the same password</li>
+    </ul>
+</div>    
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, autofocus: true %></div>
+
+  <div><%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off" %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+
+  <div><%= f.submit "Sign up" %></div>
+<% end %>
+
+<%= render "devise/shared/links" %>

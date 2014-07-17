@@ -1,10 +1,18 @@
 source 'https://rubygems.org'
-
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+
+#Use Mysql as the database for Active Record
+#gem 'mysql2', '~> 0.3.16'
+
+#Use Devise as the main authentification tool
+gem 'devise', '~> 3.2.4'
+
+#Use Capybara for testing interfaces
+gem 'capybara', '~> 2.4.1'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -34,6 +42,12 @@ gem 'spring',        group: :development
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+#use rspec for development tests and also factory-girl
+group :development, :test do
+    gem 'rspec-rails', '~> 3.0.0'
+    gem 'factory_girl', '~> 4.4.0'
+end    
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]

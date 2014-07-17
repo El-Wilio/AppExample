@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+
+body, html{
+    margin: 0;
+    height: 100%;
+    padding-left: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: darkred;
+}
+
+#content {
+    width: 50%;
+    height: 100%;
+    margin: 0 auto;    
+    color: darkslategray;
+}
