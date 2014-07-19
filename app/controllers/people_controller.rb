@@ -26,16 +26,16 @@ class PeopleController < ApplicationController
 
     def view
        if current_user.nil?
-          flash.now[:alert] = "oops, you are not logged in yet!"
-          return
+           flash.now[:alert] = "oops, you are not logged in yet!"
+           return
        end
-            
-        @vehicles = current_user.person.vehicles
-            if current_user.person.nil?
-            redirect_to '/people/new', alert: "OOPS, make sure to fill in your info before proceeding"
-            return 
+         
+       if current_user.person.nil?
+           redirect_to '/people/new', alert: "OOPS, make sure to fill in your info before proceeding"
+           return 
         end
 
+        @vehicles = current_user.person.vehicles
         @forename       = current_user.person.forename
         @surname        = current_user.person.surname
         @city           = current_user.person.city
