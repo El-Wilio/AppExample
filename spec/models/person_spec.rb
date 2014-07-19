@@ -83,15 +83,4 @@ RSpec.describe Person, :type => :model do
 
    end    
 
-   it "should respect the number of max vehicles" do
-       @vehicle = Vehicle.new(license_plate: "5ty qrc", colour: "blue", 
-                              make: "ford", model: "escape", year: "1994")
-       @person.vehicles << @vehicle
-       expect(@person).to be_valid
-       @person.vehicles << @vehicle
-       expect(@person).to be_valid
-       @person.vehicles << @vehicle
-       expect(@person).not_to be_valid
-   end   
-
 end

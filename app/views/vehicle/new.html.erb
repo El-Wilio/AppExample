@@ -1,0 +1,34 @@
+<h1>Add a New Car!</h1>
+<div class="info">
+    <p>This is a form to add a new car to your profile. Please fill out the form correctly to avoid any
+    errors.</p>
+    <p>Just remember: only 2 cars per account!</p>
+    <p>And also: blanks and non alpha numeric characters will be removed from the license plate after you submit it. So tr%^h7 fdg becomes trh7fdg</p>
+</div>
+
+<%= form_for @vehicle, url: {action: "create"} do |f| %>
+    <div>
+        <%= f.label :License_plate %><br />
+        <%= f.text_field :license_plate %>
+    </div>
+    <div>
+        <%= f.label :Colour %><br />
+        <%= f.text_field :colour %>
+    </div>
+    <div>
+        <%= f.label :Make %><br />
+        <%= f.text_field :make %>
+    </div>
+    <div>
+        <%= f.label :Model %><br />
+        <%= f.text_field :model %>
+    </div>
+    <div>
+        <%= f.label :Year %><br />
+        <%= f.text_field :year %>
+    </div>
+    <div>
+        <%= f.submit "Add new car" %>
+    </div>
+<% end %>
+    

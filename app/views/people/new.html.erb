@@ -4,8 +4,7 @@
  <p>You are seeing this page because you are needed to fill in your personal info
  in order to continue.</p>
 
- <p> This page is also complimented with some javascript to help you, the client, to fill those forms in
- a correct manner.</p>
+ <p>This is where I should guide you in filling this form, but you should know how for now.</p>
  </div>
 
 
@@ -28,7 +27,7 @@
     </div>
     <div>
         <%= f.label :Province %><br />
-        <%= f.text_field :province %>
+        <%= select :person, :province, Province.all.collect {|p|[ p.name, p.name_with_initial ]} %>
     </div>
     <div>
         <%= f.label :Postal_code %><br />
@@ -41,7 +40,7 @@
         <%= f.text_field :second_half, size: "4" %>
     </div>
     <div>
-        <%= f.submit "Send Info" %></div>
+        <%= f.submit "Send Info", class: 'submit_info' %></div>
 <% end %>
 <% else %>
     <% flash[:alert] = "OOPS! You're not supposed to be here buddy!" %>

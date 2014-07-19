@@ -41,7 +41,7 @@ class Person < ActiveRecord::Base
     }
  
     validates_each :vehicles do |user, attr, value|
-        user.errors.add attr, "too much vehicles for user" if user.vehicles.size > 2
+        user.errors.add attr, "too much vehicles for user" if user.vehicles.size >= 2
     end
 
     protected

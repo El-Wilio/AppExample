@@ -36,39 +36,13 @@
     .space {
         padding-right: 50px;
     }
-
-    th.cars {
-        padding-right: 20px;
-    }
-
-    td.cars {
-        padding-bottom: 20px;
-        text-align: left;
-    }
 </style>
 
 <h2>Your Cars</h2>
 
-<% if Vehicle.find_by_person_id(current_user.person.id).nil? %>
+<% if current_user.person.vehicles.nil? %>
     <p>You don't seem to have any cars, would you like to add one?</p>
-<% else%>
-<table>
-    <% @vehicles.each do |vehicle| %>
-        <tr class="cars">
-            <th class="cars">license plate</th>
-            <th class ="cars">Colour</th>
-            <th class ="cars">Make</th>
-            <th class ="cars">Model</th>
-            <th class ="cars">Year</th>
-        </tr>
-        <tr>
-            <td class="cars"><%= vehicle.license_plate %></td>
-            <td class="cars"><%= vehicle.colour %></td>
-            <td class="cars"><%= vehicle.make %></td>
-            <td class="cars"><%= vehicle.model %></td>
-            <td class="cars"><%= vehicle.year %></td>
-        </tr>
-<% end %>
-</table>
+<% else %>
+    <%= current_user.person.vehicles %>
 <% end %>
 

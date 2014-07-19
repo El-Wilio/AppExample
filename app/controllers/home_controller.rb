@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
       if !current_user.nil?
-          if Person.find_by_id(current_user.id).nil?
+          if current_user.person.nil?
               redirect_to "/people/new", notice: "Please fill out your personal info before proceeding."
           end
       end

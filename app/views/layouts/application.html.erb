@@ -12,11 +12,13 @@
     <span>
         <%= link_to("Home", "/"); %>
         <%= link_to_if(current_user.nil?, "Login", "/login") do 
-                link_to("My Account", "/logout", :method => :delete)
+                link_to("My Account", "/profile")
             end
          %>
-        <%= link_to("Car Search", "#") %>
-        <%= link_to("About me", "home/about") %>
+        <% if !current_user.nil? %>
+        <%= link_to("Add Car", "/vehicle/new") %>
+        <% end %>
+        <%= link_to("About", "home/about") %>
         <%= link_to_if(current_user.nil?, "Register", "/register") do
                 link_to("Log out", "/logout", :method => :delete) 
             end 

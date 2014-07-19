@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'profile/:id', to: 'people#view'
+  get 'vehicle/new'
+  post 'vehicle/create'
+  get 'vehicles', to: 'vehicle#view'
+
   get 'profile', to: 'people#view'  
   get 'people/new'
   post 'people/create'

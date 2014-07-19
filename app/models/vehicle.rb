@@ -1,7 +1,8 @@
 class Vehicle < ActiveRecord::Base
     belongs_to :person
     validates_associated :person, :message => "You already have two cars"
-    
+
+    before_validation :clear_whitespaces, :capitalizer, :trim_plate 
 
     validates :license_plate, format: {
         with: %r{\A[a-z0-9]+(\s[a-z0-9]+)*\z}i,
@@ -48,6 +49,10 @@ class Vehicle < ActiveRecord::Base
         self.colour.downcase!
         self.make.capitalize!
         self.model.capitalize!
+    end
+
+    def trim_plate
+        self.license_plate.gsub!(/[^a-zA-Z\d]/, '')
     end
 
 end
